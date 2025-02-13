@@ -87,7 +87,7 @@
 
                   <div class="is-size-5 publication-authors">
                     <span class="author-block">
-                      <sup>1</sup>IIIT Hyderabad,<sup>2</sup>IIIT Kottayam,<sup>3</sup>IIT Kharagpur
+                      <sup>1</sup>IIIT Hyderabad, <sup>2</sup>IIIT Kottayam, <sup>3</sup>IIT Kharagpur
                     </span>
                     <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
                   </div>
@@ -116,15 +116,7 @@
                   </a>
                 </span>
 
-                <!-- ArXiv abstract Link -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
+                
               </span>
             </div>
           </div>
@@ -144,10 +136,10 @@
         We present the Model Profiles for each country/territory surveyed through the map below. 
       </h2>
 
-      <img id="teaserImage" src="static/images/Religion.jpeg" alt="Religion" class="teaser-image">
-      <h2 id="teaserCaption" class="subtitle has-text-centered">
-        The Model Profiles reflect the Religious Majorities of each Country/Territory surveyed. 
-      </h2>
+
+      <h3 class="subtitle has-text-centered">
+        Use the dropdown to view the Model Profiles for different demographic categories. 
+      </h3>
 
       <div class="center-select">
         <div class="select is-info">
@@ -161,9 +153,13 @@
       </div>
       <br>
 
-      <h3 class="subtitle has-text-centered">
-        Use the above dropdown to view the Model Profiles for different demographic categories. 
+
+
+      <img id="teaserImage" src="static/images/Religion.jpeg" alt="Religion" class="teaser-image">
+      <h2 id="teaserCaption" class="subtitle has-text-centered">
+        The Model Profiles reflect the Religious Majorities of each Country/Territory surveyed. 
       </h2>
+
 
     </div>
   </div>
@@ -228,6 +224,24 @@
   </div>
 </section>
 
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Models Used in the Study</h2>
+        <div class="content has-text-justified">
+          <figure class="image">
+            <img src="static/images/model-table.png" alt="Models Used" class="teaser-image" style="width: 50%">
+            <figcaption class="has-text-centered">Different Open LLMs used in the study, along with the configuration (Number of Parameters).</figcaption>
+          </figure>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
 <section class="section hero is-light">
   <div class="container is-max-desktop">
@@ -253,7 +267,7 @@
         <h2 class="title is-3">The Overall Sameness of Model Profiles</h2>
         <div class="content has-text-justified">
           <p>
-            We note that all models (from the Llama, Mistral and Gemma families) tested in the study exhibit a high degree of similarity in their demographic profiles. This is observed despite differences in their architectures, parameter sizes, and training methodologies. This models, even when developed by different organizations, tend to reflect similar socio-demographic characteristics, which may vary across countries/territories.  
+            We note that all models (from the Llama, Mistral and Gemma families) tested in the study exhibit a high degree of similarity in their demographic profiles. This is observed despite differences in their architectures, parameter sizes, and training methodologies. These models, even when developed by different organizations, tend to reflect similar socio-demographic characteristics, which may vary across countries/territories.  
           </p>
         </div>
       </div>
@@ -267,9 +281,31 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Ineffective Zero-Shot Steering</h2>
         <div class="content has-text-justified">
+          <figure class="image">
+            <img src="static/images/steer-image.png" alt="Zero-Shot Steering" class="teaser-image">
+            <figcaption class="has-text-centered">Detailing the different steering prompts used in our experiments.</figcaption>
+          </figure>
           <p>
             We test different zero-shot steering methods (i.e., prompting models to respond as though they belong to different demographic groups), but find that these approaches fail to meaningfully alter the underlying demographic profile. Other approaches such as fine-tuning and model augmentation may provide better results.
           </p>
+
+          <p>
+            We examine the average distance from the model response to survey respondents of each demographic group (religion), and repeat the process with zero-shot steering prompts. On plotting the average distances as a Radar plot, we note that the steering prompts do not significantly alter the model's alignment with the different demographic groups.
+          </p>
+
+          <figure class="image">
+            <div class="columns is-centered is-vcentered">
+              <div class="column is-half has-text-centered">
+                <img src="static/images/steer-l3b.png" alt="Radar Plot: Llama 3.2 3B" class="teaser-image" style="width: 100%;">
+              </div>
+              <div class="column is-half has-text-centered">
+                <img src="static/images/steer-l3bIt.png" alt="Radar Plot: Llama 3.2 3B Instruct" class="teaser-image" style="width: 100%;">
+              </div>
+            </div>
+            <figcaption class="has-text-centered">Radar Plots for Llama 3.2 3B; Base and Instruct.</figcaption>
+          </figure>
+          
+          
         </div>
       </div>
     </div>
